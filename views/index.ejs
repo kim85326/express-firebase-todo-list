@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>待辦事項</h1>
+        <input type="text" id="contentInput" />
+        <input type="submit" id="sendButton" value="新增" />
+        <ul id="todos">
+            <% for(key in todos) { %>
+            <li>
+                <%- todos[key].content %><input
+                    type="button"
+                    class="removeButton"
+                    value="刪除"
+                    data-id="<%- key %>"
+                />
+            </li>
+            <% } %>
+        </ul>
+        <script src="/js/all.js"></script>
+    </body>
+</html>
